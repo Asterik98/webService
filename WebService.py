@@ -18,7 +18,7 @@ import time
 app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def presensi():
-    tic = time.clock()
+    tic = time.process_time()
     path='/webService/Code'
     names=[d for d in os.listdir(path) if os.path.isdir(os.path.join(path, d))]
     i=0
@@ -45,7 +45,7 @@ def presensi():
     prediksi=model.predict_classes(data).tolist()
     print(prediksi[0])
     print(names[prediksi[0]])
-    toc = time.clock()
+    toc = time.process_time()
     print("Waktu:",toc-tic)
     return jsonify({'prediction': names[prediksi[0]]})
    
