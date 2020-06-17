@@ -39,9 +39,9 @@ def presensi():
     B=(B-np.min(B))/(np.max(B)-np.min(B))
     data=B.flatten()
     data.shape=(1,5180)
-    with open('model_architecture 1000 180 90 50 20 noise 30.json', 'r') as f:
+    with open('model_architecture.json', 'r') as f:
         model = tf.keras.models.model_from_json(f.read())
-    model.load_weights('model_weights 1000 180 90 50 20 noise 30.h5')
+    model.load_weights('model_weights.h5')
     prediksi=model.predict_classes(data).tolist()
     print(prediksi[0])
     print(names[prediksi[0]])
