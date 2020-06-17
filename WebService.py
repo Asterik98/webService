@@ -19,7 +19,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def presensi():
     tic = time.process_time()
-    path='/Code'
+    path='/webService'
     names=[d for d in os.listdir(path) if os.path.isdir(os.path.join(path, d))]
     i=0
     while i<len(names):
