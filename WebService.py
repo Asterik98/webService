@@ -62,7 +62,7 @@ def save_data():
             print ("Successfully created the directory %s " % nama)
     i=0
     for i in range(len(req_data)):
-        with open(nama+'/'+str(i+1)+'.wav', mode='w') as f:
+        with open(nama+'/'+str(i+1)+'.wav', mode='wb') as f:
             f.write(base64.b64decode(req_data[i]))
     mfcc(nama)
     ann()
