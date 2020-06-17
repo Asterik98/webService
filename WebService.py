@@ -19,7 +19,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def presensi():
     tic = time.process_time()
-    path='/webService'
+    path='/home/ubuntu/webService'
     names=[d for d in os.listdir(path) if os.path.isdir(os.path.join(path, d))]
     i=0
     while i<len(names):
@@ -148,5 +148,5 @@ def delete_data():
     ann()
     return jsonify({'hasil': 'Telah Dihapus'})
 
-app.run(host='0.0.0.0', debug=True)
+app.run(host='0.0.0.0', port=80, debug=True)
 
