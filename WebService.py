@@ -23,7 +23,7 @@ def presensi():
     names=[d for d in os.listdir(path) if os.path.isdir(os.path.join(path, d))]
     i=0
     while i<len(names):
-        if names[i]=="Data MFCC" or names[i]=="Noise":
+        if names[i]=="Data MFCC" or names[i]=="Noise" or names[i]==".git":
             names.remove(names[i])
         i=i+1
     req_data = base64.b64decode(request.json['audio'])
