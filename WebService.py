@@ -104,7 +104,7 @@ def ann():
         if i==0:
             X_train,X_test,Y_train,Y_test = train_test_split(dataset,label,test_size = 0.2,shuffle=False, stratify = None)
         else:
-            X_trainAdd,X_testAdd,Y_trainAdd,Y_testAdd = train_test_split(dataset,label,test_size = 0.2)
+            X_trainAdd,X_testAdd,Y_trainAdd,Y_testAdd = train_test_split(dataset,label,test_size = 0.2,shuffle=False, stratify = None)
             X_train=np.vstack((X_train,X_trainAdd))
             X_test=np.vstack((X_test,X_testAdd))
             Y_train=np.append(Y_train,Y_trainAdd)
