@@ -122,7 +122,7 @@ def ann():
     ])
     opt = tf.keras.optimizers.Adam(learning_rate=1e-6)
     model.compile(loss='sparse_categorical_crossentropy', optimizer=opt, metrics=['accuracy'])
-    history = model.fit(X_train, Y_train,validation_data=(X_test, Y_test), epochs=1000, batch_size=40,verbose=2)
+    history = model.fit(X_train, Y_train,validation_data=(X_test, Y_test), epochs=8000, batch_size=40,verbose=2)
     akurasiTrain=model.evaluate(X_train, Y_train)
     print("Akurasi Train= "+str(akurasiTrain[1]*100)+"%")
     prediksi = model.predict_classes(X_test)
