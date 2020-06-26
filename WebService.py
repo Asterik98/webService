@@ -82,7 +82,7 @@ def mfcc(nama):
         noiseFile=noisePath+"/"+str(b+1)+'.wav'
         y, sr = librosa.load(filename,offset=0,duration=3, sr=44100)
         y2, sr2 = librosa.load(noiseFile,offset=0,duration=3, sr=44100)
-        if b>=19:
+        if b<=29 && b>=44:
             y=y+y2
         B=librosa.feature.mfcc(y=y, sr=sr)
         B =  (B - np.min(B)) / (np.max(B) - np.min(B))
